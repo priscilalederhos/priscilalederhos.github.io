@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://i.imgur.com/Tst5603.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="estilos.css" rel="stylesheet" type="text/css">
+
+    <title>Priscila Lederhos</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <div class="text">PULSA PARA MOSTRAR/OCULTAR INFO.</div>
+        </div>
+        <div class="overlay" style="display: none;">
+            <div class="overlay-text">
+                <img src="https://drive.google.com/uc?id=10S1lGJNTwQhdBrVgzdJMj7bp0Fk2pgL4">
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Random Images -->
+    <script>
+        const images = [
+            "https://i.imgur.com/wGEHDHR.jpg",
+            "https://i.imgur.com/wGEHDHR.jpg",
+            "https://i.imgur.com/wGEHDHR.jpg"
+        ];
+
+        const innerContainer = document.querySelector(".inner-container");
+        const overlay = document.querySelector(".overlay");
+        const overlayText = document.querySelector(".overlay-text");
+
+        window.onload = function () {
+            const randomImage = images[Math.floor(Math.random() * images.length)];
+            innerContainer.style.backgroundImage = `url(${randomImage})`;
+
+            innerContainer.addEventListener("click", function () {
+                overlay.style.display = "flex";
+                document.querySelector(".text").style.display = "none";
+            });
+
+            overlay.addEventListener("click", function () {
+                overlay.style.display = "none";
+            });
+        };
+    </script>
+</body>
+</html>
